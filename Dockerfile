@@ -9,8 +9,8 @@ WORKDIR /tmp
 RUN wget "https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip"
 RUN wget "https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip.asc"
 RUN gpg --batch --verify "sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip.asc" "sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip" &&\
-    unzip "sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip"
-
+    unzip "sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip" &&\
+    rm -rf /tmp/sonar-scanner-${SONAR_SCANNER_VERSION}-linux/jre
 
 
 FROM openjdk:8-jre-alpine
