@@ -4,6 +4,17 @@ Run sonar-scanner on the working directory
 
 ## Usage
 
+Secrets:
+
+- sonar_host
+- sonar_token
+
+Options:
+
+- sonar_host
+- sonar_token
+- add_branch_prefix
+
 ```yaml
 pipeline:
   analyze-code-using-sonarqube:
