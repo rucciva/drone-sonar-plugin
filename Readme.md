@@ -47,5 +47,5 @@ docker run -it --rm \
     -e PLUGIN_ADD_BRANCH_PREFIX=true \
     -e SONAR_HOST=https://some.host.com \
     -e SONAR_TOKEN=sometoken \
-    rucciva/drone-sonar-plugin
+    rucciva/drone-sonar-plugin:0.0.2
 ```

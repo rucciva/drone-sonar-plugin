@@ -15,8 +15,8 @@ ARGS+=("-Dsonar.projectName="$PROJECT_NAME)
 ARGS+=("-Dsonar.projectKey="${PROJECT_NAME//\//:})
 ARGS+=("-Dsonar.host.url="${SONAR_HOST:-$PLUGIN_SONAR_HOST})
 ARGS+=("-Dsonar.login="${SONAR_TOKEN:-$PLUGIN_SONAR_TOKEN})
-ARGS+=("-Dsonar.projectVersion="$DRONE_BUILD_NUMBER)
-ARGS+=("-Dsonar.scm.provider="$DRONE_REPO_SCM)
+ARGS+=("-Dsonar.projectVersion="${DRONE_BUILD_NUMBER:-"0"})
+ARGS+=("-Dsonar.scm.provider="${DRONE_REPO_SCM:-"git"})
 
 if [ "$#" -eq 0 ]; then
 	set -- "$MY_EXECUTABLE" "${ARGS[@]}"
