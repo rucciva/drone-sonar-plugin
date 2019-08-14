@@ -45,7 +45,7 @@ docker run -it --rm \
     -e DRONE_BUILD_NUMBER=1 \
     -e DRONE_REPO_SCM=git \
     -e PLUGIN_ADD_BRANCH_PREFIX=true \
-    -e SONAR_HOST=https://some.host.com \
-    -e SONAR_TOKEN=sometoken \
-    rucciva/drone-sonar-plugin:0.0.2
+    -e PLUGIN_HOST=https://some.host.com \
+    -e PLUGIN_TOKEN=sometoken \
+    rucciva/drone-sonar-plugin:0.0.3
 ```
