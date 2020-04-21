@@ -5,7 +5,8 @@ set -euo pipefail
 PLUGIN_ADD_BRANCH_PREFIX=${PLUGIN_ADD_BRANCH_PREFIX:-false}
 
 PROJECT_NAME=$DRONE_REPO
-if [ 'true' == "$(echo $PLUGIN_ADD_BRANCH_PREFIX | tr '[:upper:]' '[:lower:]')" ]; then 
+PLUGIN_ADD_BRANCH_PREFIX="$(echo $PLUGIN_ADD_BRANCH_PREFIX | tr '[:upper:]' '[:lower:]')"
+if [ 'true' == "$PLUGIN_ADD_BRANCH_PREFIX" ] && [ -n "${DRONE_COMMIT_BRANCH:-""}" ] ; then 
     PROJECT_NAME="$DRONE_REPO/$DRONE_COMMIT_BRANCH"
 fi
 
